@@ -10,6 +10,7 @@ import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
+import Profile from '../../screens/profile/Profile';
 
 import { Link } from 'react-router-dom';
 
@@ -154,7 +155,8 @@ class Header extends Component {
                                 onClose={this.closeMenuHandler}
 
                             >
-                                
+                                <Link to='/profile'>
+                                    <MenuItem >My Account</MenuItem></Link><hr />
                                 <Link to='/'>
                                     <MenuItem onClick={this.logoutHandler}>Logout</MenuItem></Link>
                             </Menu>
