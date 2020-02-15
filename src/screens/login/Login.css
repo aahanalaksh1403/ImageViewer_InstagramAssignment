@@ -1,0 +1,24 @@
+.dispNone {
+    display:none;
+}
+
+.dispBlock {
+    display: block;
+}
+
+.red {
+    color: red;
+}
+.main-container{
+  display: flex;
+  flex-direction: column;
+}
+.app-header {
+    background-color: #263238;
+    height: 36px;
+  }
+  .app-logo {
+    color: #fff;
+    font-size: 18px;
+    vertical-align: center;
+  }
