@@ -64,6 +64,7 @@
   .avatar {
     margin-left: auto;
     float:right;
+    border-radius: 8px;
   }
   header.MuiPaper-root-17.MuiPaper-elevation4-23.MuiAppBar-root-8.MuiAppBar-positionStatic-12.MuiAppBar-colorPrimary-15 {
     background-color: #263238;

@@ -59,11 +59,12 @@ const styles = theme => ({
 
 
 
-class Header extends Component {
+class HeaderProfile extends Component {
 
     constructor() {
         super();
         this.state = {
+        
             menuIsOpen: false,
             ownerInfo: [],
             loggedIn: sessionStorage.getItem("access-token") == null ? false : true
@@ -92,7 +93,7 @@ class Header extends Component {
             menuIsOpen: false
         });
     }
-
+    
     //Accessing data from backend API 1
     componentWillMount() {
 
@@ -112,6 +113,8 @@ class Header extends Component {
         xhr.send(ownerData);
     }
 
+    
+
     render() {
 
         const { classes } = this.props;
@@ -122,22 +125,12 @@ class Header extends Component {
                     <Toolbar className="app-header">
 
                          <div >
-                            <Typography className={{ color: "app-logo" }} variant="h6" noWrap>Image Viewer</Typography>
+                            <Typography className={{ color: "app-logo" }}  variant="h6" noWrap>Image Viewer</Typography>
+                            
                         </div>
 
 
-                        <div className={classes.search}>
-                            <div className={classes.searchIcon}>
-                                <SearchIcon />
-                            </div>
-                            <InputBase
-                                placeholder="        Search…"
-                                classes={{
-                                    root: classes.inputRoot,
-                                    input: classes.inputInput,
-                                }}
-                            />
-                        </div>
+                   
                         {<Avatar className="avatar">
                             <img aria-controls="simpleMenu" onClick={this.openMenuHandler} src={this.state.ownerInfo.profile_picture} alt={"logo"} /></Avatar>}
                         <div>
@@ -155,8 +148,7 @@ class Header extends Component {
                                 onClose={this.closeMenuHandler}
 
                             >
-                                <Link to='/profile/'>
-                                    <MenuItem >My Account</MenuItem></Link><hr />
+                             
                                 <Link to='/'>
                                     <MenuItem onClick={this.logoutHandler}>Logout</MenuItem></Link>
                             </Menu>
@@ -171,4 +163,4 @@ class Header extends Component {
 
 
 
-export default withStyles(styles)(Header);
+export default withStyles(styles)(HeaderProfile);

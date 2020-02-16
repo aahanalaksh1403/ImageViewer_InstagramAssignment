@@ -184,7 +184,7 @@ class Home extends Component{
         userData:jsonResponse.data
       });
     }).catch((error) => {
-      console.log('error user data',error);
+      console.log('error fetching user data',error);
     });
   }
 
@@ -201,7 +201,7 @@ class Home extends Component{
         filteredData:jsonResponse.data
       });
     }).catch((error) => {
-      console.log('error user data',error);
+      console.log('error fetching media data',error);
     });
   }
 
@@ -229,13 +229,14 @@ class HomeItem extends Component{
 
     let createdTime = new Date(0);
     createdTime.setUTCSeconds(item.created_time);
+    let HH = createdTime.getHours();
+    let MM = createdTime.getMinutes();
+    let ss = createdTime.getSeconds();
     let yyyy = createdTime.getFullYear();
     let mm = createdTime.getMonth() + 1;
     let dd = createdTime.getDate();
 
-    let HH = createdTime.getHours();
-    let MM = createdTime.getMinutes();
-    let ss = createdTime.getSeconds();
+    
 
     let time = dd+"/"+mm+"/"+yyyy+" "+HH+":"+MM+":"+ss;
     let hashTags = item.tags.map(hash =>{

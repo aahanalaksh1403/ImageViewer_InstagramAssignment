@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './Profile.css';
 import {constants} from '../../common/utils'
-import Header from '../../common/header/Header';
+import HeaderProfile from '../../common/header/HeaderProfile';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import EditIcon from '@material-ui/icons/Edit';
@@ -31,7 +31,7 @@ const styles = {
     },
     media: {
         height: '200px',
-        paddingTop: '56.25%', // 16:9
+        paddingTop: '56.25%', 
     },
     imageModal: {
         backgroundColor: "#fff",
@@ -88,7 +88,7 @@ class Profile extends Component {
                 followed_by: jsonResponse.data.counts.followed_by
             });
         }).catch((error) => {
-            console.log('error user data',error);
+            console.log('error fetching user data',error);
         });
     }
 
@@ -104,7 +104,7 @@ class Profile extends Component {
                 mediaData: jsonResponse.data
             });
         }).catch((error) => {
-            console.log('error media data',error);
+            console.log('error  fetching media data',error);
         });
     }
 
@@ -213,7 +213,7 @@ class Profile extends Component {
       }
         return(
             <div>
-                <Header
+                <HeaderProfile
                   screen={"Profile"}
                   userProfileUrl={this.state.profile_picture}
                   handleLogout={this.logout}/>
@@ -230,8 +230,8 @@ class Profile extends Component {
                             <div style={{float: "left", width: "200px", fontSize: "x-small"}}> Followed By: {this.state.followed_by}</div> <br />
                         </div>
                         <div style={{fontSize: "small"}}> {this.state.full_name}
-                        <Button aria-label="Edit" style={{marginLeft: "20px"}} onClick={this.handleOpenEditModal}>
-                            <EditIcon  variant="fab" color="secondary">edit_icon</EditIcon>
+                        <Button aria-label="Edit" style={{marginLeft: "20px" }}  onClick={this.handleOpenEditModal}>
+                         <EditIcon   variant="fab" color="secondary">edit_icon</EditIcon>
                         </Button>
                         </div>
                         <Modal
