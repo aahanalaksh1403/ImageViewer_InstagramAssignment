@@ -1,8 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-Once the npm modules and material api related components are installed, start the npm
+
 ## Available Scripts
 
 In the project directory, you can run:
+Once the npm modules and material api related components are installed, start the npm
 
 ### `npm start`
 
